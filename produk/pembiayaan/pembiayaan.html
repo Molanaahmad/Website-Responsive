@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pembiayaan Syariah | [NAMA LEMBAGA]</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- CSS PEMBIAYAAN -->
+    <link rel="stylesheet" href="../../css/pembiayaan.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="pembiayaan-header">
+        <div class="container pembiayaan-header-wrapper">
+
+            <a href="../../index.html" class="pembiayaan-logo">
+                <img
+                    src="../../img/logo bpr.png"
+                    alt="Logo [NAMA LEMBAGA]"
+                    class="pembiayaan-logo-img"
+                >
+
+                <img
+                    src="../../img/logo bpr tulisan.png"
+                    alt="[NAMA LEMBAGA]"
+                    class="pembiayaan-logo-text"
+                >
+            </a>
+
+            <a href="../../index.html" class="pembiayaan-back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Kembali ke Beranda</span>
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="pembiayaan-hero">
+
+            <div class="container">
+
+                <div class="pembiayaan-hero-content reveal">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <span class="section-badge">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        Pembiayaan Syariah
+                    </span>
+
+                    <h1>
+                        Pilih Pembiayaan
+                        <span>Sesuai Kebutuhan Anda</span>
+                    </h1>
+
+                    <p>
+                        Tersedia berbagai pilihan pembiayaan berdasarkan
+                        prinsip syariah untuk kebutuhan pribadi, usaha,
+                        maupun kebutuhan lainnya.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PILIH PRODUK
+        ====================================================== -->
+
+        <section class="pembiayaan-products">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-label">
+                        Pilihan Akad
+                    </span>
+
+                    <h2>
+                        Pilih Jenis Pembiayaan
+                    </h2>
+
+                    <p>
+                        Klik salah satu produk untuk melihat informasi
+                        dan formulir pengajuan.
+                    </p>
+
+                </div>
+
+
+                <div class="pembiayaan-product-grid">
+
+                    <button
+                        type="button"
+                        class="pembiayaan-product-card active"
+                        data-product="murabahah"
+                    >
+                        <span class="product-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                
+                        <span class="product-card-content">
+                            <strong>Murabahah</strong>
+                            <small>Pembiayaan jual beli</small>
+                        </span>
+                
+                        <i class="fa-solid fa-arrow-right product-arrow"></i>
+                    </button>
+                
+                
+                    <button
+                        type="button"
+                        class="pembiayaan-product-card"
+                        data-product="mudharabah"
+                    >
+                        <span class="product-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+                
+                        <span class="product-card-content">
+                            <strong>Mudharabah</strong>
+                            <small>Pembiayaan kerja sama usaha</small>
+                        </span>
+                
+                        <i class="fa-solid fa-arrow-right product-arrow"></i>
+                    </button>
+                
+                
+                    <button
+                        type="button"
+                        class="pembiayaan-product-card"
+                        data-product="ijarah"
+                    >
+                        <span class="product-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </span>
+                
+                        <span class="product-card-content">
+                            <strong>Musyarakah</strong>
+                            <small>Pembiayaan kerja sama usaha</small>
+                        </span>
+                
+                        <i class="fa-solid fa-arrow-right product-arrow"></i>
+                    </button>
+                
+                
+                    <button
+                        type="button"
+                        class="pembiayaan-product-card"
+                        data-product="jasa"
+                    >
+                        <span class="product-icon">
+                            <i class="fa-solid fa-hand-holding-hand"></i>
+                        </span>
+                
+                        <span class="product-card-content">
+                            <strong>Multijasa</strong>
+                            <small>Layanan jasa pembayaran</small>
+                        </span>
+                
+                        <i class="fa-solid fa-arrow-right product-arrow"></i>
+                    </button>
+                
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DETAIL + FORM
+        ====================================================== -->
+
+        <section class="pembiayaan-detail" 
+                    id="pembiayaan-detail">
+
+            <div class="container">
+
+                <div class="pembiayaan-detail-grid">
+
+                    <!-- DETAIL PRODUK -->
+
+                    <div class="pembiayaan-info reveal-left">
+
+                        <span
+                            class="detail-badge"
+                            id="productBadge"
+                        >
+                            Akad Murabahah
+                        </span>
+
+                        <h2 id="productTitle">
+                            Pembiayaan Murabahah
+                        </h2>
+
+                        <p id="productDescription">
+                            Pembiayaan berdasarkan akad jual beli,
+                            dimana lembaga membeli barang yang dibutuhkan
+                            nasabah kemudian menjualnya kembali dengan
+                            harga yang disepakati.
+                        </p>
+
+
+                        <div
+                            class="product-highlights"
+                            id="productHighlights"
+                        >
+                        </div>
+
+
+                        <div class="requirements-box">
+
+                            <div class="requirements-title">
+                                <span class="requirements-icon">
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <div>
+                                    <span>Persyaratan Umum</span>
+                                    <strong>Dokumen yang perlu disiapkan</strong>
+                                </div>
+                            </div>
+
+
+                            <ul>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    Jaminan BPKB / SHM
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    FC KTP
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    FC KK
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    FC Surat Nikah
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    FC STNK / BPKB atau FC PBB / Sertifikat SHM
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    Slip gaji bagi karyawan
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    Slip dan TDP bagi pengusaha
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FORM -->
+
+                    <div class="pembiayaan-form-wrapper reveal-right">
+
+                        <div class="form-header">
+
+                            <span class="form-label">
+                                Form Pengajuan
+                            </span>
+
+                            <h3 id="formTitle">
+                                Ajukan Pembiayaan Murabahah
+                            </h3>
+
+                            <p>
+                                Isi data berikut dengan lengkap.
+                                Data akan diteruskan melalui WhatsApp.
+                            </p>
+
+                        </div>
+
+
+                        <form
+                            id="pembiayaanForm"
+                            class="pembiayaan-form"
+                            autocomplete="off"
+                        >
+
+                            <div id="dynamicFormFields">
+                                <!-- FORM DIBUAT OLEH pembiayaan.js -->
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn-submit-pembiayaan"
+                            >
+                                <span>
+                                    Ajukan Sekarang
+                                </span>
+
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+
+                            <p class="form-note">
+                                <i class="fa-solid fa-lock"></i>
+                                Data Anda akan digunakan untuk proses
+                                pengajuan pembiayaan.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ALUR PENGAJUAN
+        ====================================================== -->
+
+        <section class="pembiayaan-process">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-label">
+                        Proses Pengajuan
+                    </span>
+
+                    <h2>
+                        Mudah dan Transparan
+                    </h2>
+
+                    <p>
+                        Ikuti beberapa langkah berikut untuk mengajukan
+                        pembiayaan.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-item reveal">
+
+                        <span class="process-number">
+                            01
+                        </span>
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+
+                        <h3>
+                            Konsultasi
+                        </h3>
+
+                        <p>
+                            Sampaikan kebutuhan pembiayaan Anda
+                            kepada kami.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <span class="process-number">
+                            02
+                        </span>
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <h3>
+                            Lengkapi Dokumen
+                        </h3>
+
+                        <p>
+                            Siapkan dokumen dan persyaratan
+                            yang dibutuhkan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <span class="process-number">
+                            03
+                        </span>
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <h3>
+                            Verifikasi
+                        </h3>
+
+                        <p>
+                            Data dan dokumen akan melalui proses
+                            verifikasi.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <span class="process-number">
+                            04
+                        </span>
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+
+                        <h3>
+                            Akad
+                        </h3>
+
+                        <p>
+                            Setelah disetujui, proses akad dilakukan
+                            sesuai prinsip syariah.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="pembiayaan-cta">
+
+            <div class="container">
+
+                <div class="pembiayaan-cta-box reveal">
+
+                    <div>
+
+                        <span class="section-label">
+                            Butuh Bantuan?
+                        </span>
+
+                        <h2>
+                            Masih Bingung Memilih Pembiayaan?
+                        </h2>
+
+                        <p>
+                            Konsultasikan kebutuhan Anda dengan tim kami
+                            untuk mendapatkan informasi lebih lanjut.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="https://wa.me/628XXXXXXXXXX"
+                        target="_blank"
+                        class="btn btn-primary"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Konsultasi WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../../js/script.js"></script>
+
+    <script src="../../js/whatsapp-from.js"></script>
+
+    <script src="../../js/pembiayaan.js"></script>
+
+</body>
+</html>

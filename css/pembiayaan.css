@@ -1,0 +1,1813 @@
+/* =========================================================
+   PEMBIAYAAN PAGE
+========================================================= */
+/* =========================================
+   PEMBIAYAAN — TEMA PUTIH MINT
+   Disamakan dengan halaman Tabungan
+========================================= */
+
+:root {
+    --bg: #F3FAF4;
+    --bg-soft: #E7F4E9;
+    --bg-card: #FFFFFF;
+    --bg-card-2: #F7FCF8;
+
+    --green-dark: #0C3B2A;
+    --green: #16845A;
+    --green-light: #24B982;
+    --green-bright: #35D993;
+
+    --white: #FFFFFF;
+    --text: #173D2C;
+    --text-soft: #62776A;
+
+    --border: rgba(12, 59, 42, 0.12);
+    --shadow: 0 20px 60px rgba(12, 59, 42, 0.10);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pembiayaan-header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-bottom:  none;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+
+.pembiayaan-header-wrapper {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+/* Efek saat halaman di-scroll (opsional) */
+.pembiayaan-header.scrolled {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+
+.pembiayaan-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+
+.pembiayaan-logo-img {
+    width: 55px;
+    height: auto;
+
+    display: block;
+}
+
+
+.pembiayaan-logo-text {
+    width: 140px;
+    height: auto;
+
+    display: block;
+}
+
+
+.pembiayaan-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+.pembiayaan-back-home i {
+    color: var(--green-dark);
+
+    transition: var(--transition);
+}
+
+
+.pembiayaan-back-home:hover {
+    color: var(--text-soft);
+    transform: translateX(-3px);
+}
+
+
+.pembiayaan-back-home:hover i {
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   BACKGROUND DEPOSITO
+   A = Hijau mint
+   B = Putih semi-hijau
+========================================= */
+
+/* Background dasar halaman */
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #DDF3E5;
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.pembiayaan-hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 90px 0 70px;
+
+   /* Background hero: gambar asli + efek warna */
+   background-color: #F3FAF4;
+   background-image:
+       linear-gradient(
+           to bottom,
+           transparent 65%,
+           rgba(243, 250, 244, 0.45) 84%,
+           #F3FAF4 100%
+       ),
+       radial-gradient(
+           ellipse at 82% 24%,
+           rgba(78, 205, 145, 0.20),
+           transparent 34%
+       ),
+       radial-gradient(
+           ellipse at 12% 82%,
+           rgba(255, 255, 255, 0.72),
+           transparent 42%
+       ),
+       url("../img/bg1.png");
+
+   background-size: 100% 100%, auto, auto, 100% auto;
+   background-position: center, center, center, top center;
+   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+
+
+   /* Ganti properti background pada .hero saja */
+   background:
+       radial-gradient(
+           ellipse at 82% 24%,
+           rgba(78, 205, 145, 0.20),
+           transparent 34%
+       ),
+       radial-gradient(
+           ellipse at 12% 82%,
+           rgba(255, 255, 255, 0.72),
+           transparent 42%
+       ),
+       linear-gradient(
+           125deg,
+           #F0FFF7 0%,
+           #DDF8E9 42%,
+           #BDEFD4 76%,
+           #EAFBF1 100%
+       ),
+
+}
+
+.pembiayaan-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(53, 217, 147, 0.05);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+.pembiayaan-hero-content {
+    max-width: 760px;
+}
+
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 22px;
+
+    color: #16845A;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    background: rgba(53, 217, 147, 0.08);
+
+    border: 1px solid rgba(53, 217, 147, 0.18);
+
+    border-radius: 100px;
+}
+
+
+.section-badge i {
+    font-size: 13px;
+}
+
+.pembiayaan-hero .section-badge {
+    color: #051d13;
+}
+
+
+.pembiayaan-hero h1 {
+    margin: 0 0 22px;
+
+    color: #0C3B2A;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(38px, 5vw, 62px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.8px;
+}
+
+
+.pembiayaan-hero h1 span {
+    display: block;
+
+    color: #0C3B2A;
+}
+
+
+.pembiayaan-hero p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #62776A;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    max-width: 680px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #16845A;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+.section-heading h2 {
+    margin: 0 0 12px;
+
+    color: #0C3B2A;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1.2;
+}
+
+
+.section-heading p {
+    margin: 0;
+
+    color: #62776A;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCT SECTION
+========================================================= */
+
+.pembiayaan-products {
+    padding: 85px 0;
+    background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #E2F5E9 15%,
+        #D7F0E1 50%,
+        #C5E9D3 80%,
+        #FFFFFF 100%
+    );;
+}
+
+
+.pembiayaan-product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.pembiayaan-product-card {
+    --card-green: #0C3B2A;
+    --card-emerald: #16845A;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 145px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 27px 25px;
+
+    color: #FFFFFF;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(53, 217, 147, 0.16),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #0C3B2A 0%,
+            #104B35 48%,
+            #073322 100%
+        );
+
+    border: 1px solid rgba(112, 237, 180, 0.18);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(7, 51, 34, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+.pembiayaan-product-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 170px;
+    height: 170px;
+
+    top: -100px;
+    right: -65px;
+
+    background: rgba(53, 217, 147, 0.12);
+    border-radius: 50%;
+    filter: blur(4px);
+
+    transition:
+        transform 0.5s ease,
+        background 0.35s ease;
+}
+
+.pembiayaan-product-card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    top: 0;
+    left: -130%;
+
+    width: 75%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.09),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+}
+
+
+.pembiayaan-product-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(53, 217, 147, 0.65);
+
+    box-shadow:
+        0 18px 42px rgba(7, 51, 34, 0.25),
+        0 0 24px rgba(36, 185, 130, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.pembiayaan-product-card:hover::before {
+    transform: scale(1.5);
+    background: rgba(53, 217, 147, 0.20);
+}
+
+.pembiayaan-product-card:hover::after {
+    left: 150%;
+}
+
+
+.pembiayaan-product-card.active {
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(53, 217, 147, 0.23),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #104B35 0%,
+            #126543 52%,
+            #073322 100%
+        );
+
+    border-color: #35D993;
+
+    box-shadow:
+        0 12px 35px rgba(7, 51, 34, 0.22),
+        0 0 0 1px rgba(53, 217, 147, 0.12),
+        0 0 25px rgba(53, 217, 147, 0.10);
+}
+
+.product-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #16845A;
+
+    background: #E7F4E9;
+
+    border: 1px solid rgba(22, 132, 90, 0.12);
+
+    border-radius: 13px;
+
+    font-size: 18px;
+}
+
+.pembiayaan-product-card .product-icon {
+    position: relative;
+    z-index: 1;
+
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6AF0B2;
+    font-size: 21px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 217, 147, 0.18),
+        rgba(53, 217, 147, 0.06)
+    );
+
+    border: 1px solid rgba(106, 240, 178, 0.30);
+    border-radius: 16px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.pembiayaan-product-card:hover .product-icon,
+.pembiayaan-product-card.active .product-icon {
+    transform: translateY(-2px) scale(1.05);
+
+    background: rgba(53, 217, 147, 0.23);
+
+    box-shadow:
+        0 0 20px rgba(53, 217, 147, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.pembiayaan-product-card .product-card-content {
+    position: relative;
+    z-index: 1;
+
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pembiayaan-product-card .product-card-content strong {
+    color: #F2FFF7;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    transition: color 0.3s ease;
+}
+
+.pembiayaan-product-card .product-card-content small {
+    color: #B8D9C8;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.pembiayaan-product-card .product-arrow {
+    position: relative;
+    z-index: 1;
+
+    flex-shrink: 0;
+    margin-left: auto;
+
+    color: #9BC9B1;
+    font-size: 19px;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+.pembiayaan-product-card:hover .product-arrow,
+.pembiayaan-product-card.active .product-arrow {
+    color: #6AF0B2;
+    transform: translateX(5px);
+}
+
+.pembiayaan-product-card:focus-visible {
+    outline: 3px solid #35D993;
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.pembiayaan-detail {
+    padding: 100px 0;
+
+    background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #D7F0E1 20%,
+        #C5E9D3 65%,
+        #FFFFFF 100%
+    );
+}
+
+
+.pembiayaan-detail-grid {
+    display: grid;
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+.pembiayaan-info .detail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 15px;
+    margin-bottom: 22px;
+
+    color: #6AF0B2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(12, 59, 42, 0.96),
+        rgba(16, 75, 53, 0.96)
+    );
+
+    border: 1px solid rgba(53, 217, 147, 0.35);
+    border-radius: 50px;
+
+    box-shadow: 0 5px 18px rgba(12, 59, 42, 0.12);
+}
+
+
+.pembiayaan-info h2 {
+    margin: 0 0 20px;
+
+    color: #0C3B2A;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.pembiayaan-info > p {
+    margin: 0 0 30px;
+
+    color: #526B5D;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.product-highlights {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.product-highlights .highlight-item {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(53, 217, 147, 0.13),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #0C3B2A 0%,
+            #104B35 55%,
+            #073322 100%
+        );
+
+    border: 1px solid rgba(112, 237, 180, 0.16);
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 22px rgba(7, 51, 34, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-highlights .highlight-item::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 110px;
+    height: 110px;
+
+    top: -75px;
+    right: -35px;
+
+    background: rgba(53, 217, 147, 0.12);
+    border-radius: 50%;
+    filter: blur(5px);
+
+    transition: transform 0.4s ease;
+}
+
+.product-highlights .highlight-item:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(53, 217, 147, 0.48);
+
+    box-shadow:
+        0 14px 30px rgba(7, 51, 34, 0.19),
+        0 0 18px rgba(53, 217, 147, 0.08);
+}
+
+.product-highlights .highlight-item:hover::before {
+    transform: scale(1.5);
+}
+
+.product-highlights .highlight-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6AF0B2;
+    font-size: 15px;
+
+    background: rgba(53, 217, 147, 0.13);
+    border: 1px solid rgba(106, 240, 178, 0.27);
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.product-highlights .highlight-item:hover .highlight-icon {
+    transform: scale(1.06);
+    background: rgba(53, 217, 147, 0.22);
+}
+
+
+.product-highlights .highlight-item span {
+    position: relative;
+    z-index: 1;
+
+    color: #E1F4E9;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.requirements-box {
+    padding: 26px;
+
+    background: linear-gradient(
+        145deg,
+        #0C3B2A 0%,
+        #104B35 55%,
+        #073322 100%
+    );
+
+    border: 1px solid rgba(112, 237, 180, 0.20);
+    border-radius: 20px;
+
+    box-shadow:
+        0 14px 35px rgba(7, 51, 34, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+.requirements-title {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.requirements-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:  #6AF0B2;
+
+    background: rgba(53, 217, 147, 0.14);
+
+    border: 1px solid rgba(106, 240, 178, 0.25);
+
+    border-radius: 11px;
+}
+
+
+.requirements-title > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.requirements-title span {
+    color: #B8D9C8;
+
+    font-size: 12px;
+}
+
+
+.requirements-title strong {
+    color: #F2FFF7;
+
+    font-size: 14px;
+}
+
+
+.requirements-box ul {
+    display: grid;
+
+    gap: 11px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.requirements-box li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #D5EADF;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.requirements-box li i {
+    margin-top: 3px;
+
+    color:  #6AF0B2;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.pembiayaan-form-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    padding: 35px;
+
+    background: linear-gradient(
+        145deg,
+        #0C3B2A 0%,
+        #104B35 55%,
+        #073322 100%
+    );
+
+    border: 1px solid rgba(106, 240, 178, 0.25);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(7, 51, 34, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.pembiayaan-form-wrapper::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+
+    width: 220px;
+    height: 220px;
+
+    top: -150px;
+    right: -70px;
+
+    background: rgba(53, 217, 147, 0.16);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.pembiayaan-form-wrapper > * {
+    position: relative;
+    z-index: 1;
+}
+
+.form-label {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #6AF0B2;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+.form-header h3 {
+    margin: 0 0 9px;
+
+    color: #F2FFF7;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+}
+
+
+.form-header p {
+    margin: 0;
+
+    color: #C0DCCD;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.dynamic-form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+    color: #E7F7ED;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.required {
+    color: #6AF0B2;
+}
+
+
+.pembiayaan-form-wrapper .form-control,
+.pembiayaan-form-wrapper input.form-control,
+.pembiayaan-form-wrapper textarea.form-control,
+.pembiayaan-form-wrapper select.form-control {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    color: #17251D !important;
+    caret-color: #16845A;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    background-color: #F8FCF9 !important;
+
+    border: 1px solid #C9DED1;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.form-control::placeholder {
+    color: #82958A !important;
+    opacity: 1;
+}
+
+
+.pembiayaan-form-wrapper .form-control:focus {
+    color: #17251D !important;
+    background-color: #FFFFFF !important;
+
+    border-color: #35D993;
+
+    box-shadow:
+        0 0 0 3px rgba(53, 217, 147, 0.20),
+        0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Autofill browser: cegah input menjadi gelap */
+.pembiayaan-form-wrapper input.form-control:-webkit-autofill,
+.pembiayaan-form-wrapper input.form-control:-webkit-autofill:hover,
+.pembiayaan-form-wrapper input.form-control:-webkit-autofill:focus {
+    -webkit-text-fill-color: #17251D !important;
+    caret-color: #16845A;
+
+    -webkit-box-shadow: 0 0 0 1000px #F8FCF9 inset !important;
+    box-shadow: 0 0 0 1000px #F8FCF9 inset !important;
+
+    border: 1px solid #C9DED1;
+}
+
+.pembiayaan-form-wrapper select.form-control {
+    color: #17251D !important;
+    background-color: #F8FCF9 !important;
+    cursor: pointer;
+}
+
+.pembiayaan-form-wrapper select.form-control option {
+    color: #17251D !important;
+    background-color: #FFFFFF !important;
+}
+
+.pembiayaan-form-wrapper textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.pembiayaan-form-wrapper .btn-submit-pembiayaan {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding: 16px 20px;
+
+    color: #073322;
+    font-size: 14px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #6AF0B2 0%,
+        #35D993 55%,
+        #24B982 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+.btn-submit-pembiayaan i {
+    font-size: 18px;
+}
+
+
+.pembiayaan-form-wrapper .btn-submit-pembiayaan:hover {
+    color: #073322;
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(53, 217, 147, 0.20);
+}
+
+.pembiayaan-form-wrapper .btn-submit-pembiayaan:focus-visible {
+    outline: 3px solid #A5FFD1;
+    outline-offset: 4px;
+}
+
+
+.form-note {
+    display: flex;
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 14px 0 0;
+
+    color: #C0DCCD;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+.form-note i {
+    margin-top: 2px;
+
+    color:  #6AF0B2;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.pembiayaan-process {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+
+    background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #F3FAF4 20%,
+        #E7F4E9 75%,
+        #FFFFFF 100%
+    );
+}
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+.process-item {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 30px 25px;
+
+    background: linear-gradient(
+        145deg,
+        #14543B 0%,
+        #0C3B2A 60%,
+        #073322 100%
+    );
+
+    border: 1px solid rgba(106, 240, 178, 0.20);
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 28px rgba(12, 59, 42, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Efek cahaya di sudut card */
+.process-item::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 150px;
+    height: 150px;
+
+    top: -95px;
+    right: -55px;
+
+    background: rgba(53, 217, 147, 0.16);
+    border-radius: 50%;
+    filter: blur(24px);
+
+    transition: transform 0.4s ease;
+}
+
+/* Garis emerald di bawah card */
+.process-item::after {
+    content: "";
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 0;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #35D993,
+        transparent
+    );
+
+    opacity: 0.35;
+    transform: scaleX(0.4);
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+/* Hover card */
+.process-item:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(106, 240, 178, 0.55);
+
+    box-shadow:
+        0 18px 38px rgba(12, 59, 42, 0.22),
+        0 0 22px rgba(53, 217, 147, 0.08);
+}
+
+.process-item:hover::before {
+    transform: scale(1.4);
+}
+
+.process-item:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.process-number {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    color: rgba(106, 240, 178, 0.20);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+/* Ikon proses */
+.process-icon {
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    color: #6AF0B2;
+    font-size: 20px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 217, 147, 0.22),
+        rgba(53, 217, 147, 0.07)
+    );
+
+    border: 1px solid rgba(106, 240, 178, 0.30);
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.process-item:hover .process-icon {
+    transform: translateY(-3px) scale(1.05);
+    background: rgba(53, 217, 147, 0.28);
+}
+
+.process-item h3 {
+    position: relative;
+
+    margin: 0 0 10px;
+
+    color: #F2FFF7;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+.process-item p {
+    position: relative;
+
+    margin: 0;
+
+    color: #C0DCCD;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.pembiayaan-cta {
+    padding: 80px 0;
+
+    background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #E2F5E9 15%,
+        #D7F0E1 50%,
+        #C5E9D3 80%,
+        #FFFFFF 100%
+    );
+}
+
+
+.pembiayaan-cta-box {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 50px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(53, 217, 147, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(36, 185, 130, 0.12),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #14543B 0%,
+            #0C3B2A 48%,
+            #06291C 100%
+        );
+
+    border: 1px solid rgba(106, 240, 178, 0.30);
+    border-radius: 26px;
+
+    box-shadow:
+        0 24px 55px rgba(12, 59, 42, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+.pembiayaan-cta-box .btn:hover {
+    color: #073322;
+    filter: brightness(1.07);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 30px rgba(53, 217, 147, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Ikon tombol bergerak sedikit */
+.pembiayaan-cta-box .btn i {
+    transition: transform 0.3s ease;
+}
+
+.pembiayaan-cta-box .btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Fokus keyboard */
+.pembiayaan-cta-box .btn:focus-visible {
+    outline: 3px solid #A5FFD1;
+    outline-offset: 4px;
+}
+
+
+.pembiayaan-cta-box h2 {
+    margin: 0 0 10px;
+
+    color: var(--green-bright);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(25px, 3vw, 35px);
+}
+
+
+.pembiayaan-cta-box p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: white;
+
+    line-height: 1.7;
+}
+
+.pembiayaan-cta-box span {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: white;
+
+    line-height: 1.7;
+}
+
+
+.pembiayaan-cta-box .btn {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PRODUCT SWITCH ANIMATION
+========================================================= */
+
+.pembiayaan-info.switching,
+.pembiayaan-form-wrapper.switching {
+    animation: productSwitch 0.35s ease;
+}
+
+
+@keyframes productSwitch {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pembiayaan-product-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;  
+    }
+
+    .pembiayaan-detail-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .pembiayaan-info {
+        position: static;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .pembiayaan-header-wrapper {
+        min-height: 72px;
+    }
+
+    .pembiayaan-logo {
+        gap: 8px;
+    }
+
+    .pembiayaan-logo-img {
+        width: 42px;
+    }   
+
+    .pembiayaan-logo-text {
+        width: 105px;
+    }
+
+    .pembiayaan-info h2 {
+        font-size: 30px;
+    }
+
+    .pembiayaan-back-home {
+        padding: 8px 11px;
+
+        font-size: 12px;
+
+        gap: 6px;
+    }
+
+
+    .pembiayaan-hero {
+        padding: 65px 0 55px;
+    }
+
+    .pembiayaan-form-wrapper .form-header h3 {
+        font-size: 22px;
+    }
+
+    .pembiayaan-products,
+    .pembiayaan-detail,
+    .pembiayaan-process {
+        padding: 70px 0;
+    }
+
+
+    .pembiayaan-product-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .pembiayaan-product-card {
+        min-height: 120px;
+        padding: 22px 18px;
+        gap: 15px;
+        border-radius: 17px;
+    }
+
+    .pembiayaan-product-card .product-icon {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+        font-size: 18px;
+        border-radius: 13px;
+    }
+
+    .pembiayaan-product-card .product-card-content strong {
+        font-size: 15px;
+    }
+
+    .pembiayaan-product-card .product-card-content small {
+        font-size: 12px;
+    }
+
+    .pembiayaan-form-wrapper {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .product-highlights .highlight-item {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .product-highlights .highlight-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .dynamic-form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .process-item {
+        padding: 26px 22px;
+    }
+
+    .process-number {
+        font-size: 42px;
+    }
+
+
+    .pembiayaan-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+
+        padding: 32px 24px;
+        border-radius: 21px;
+    }
+
+
+    .pembiayaan-cta-box .btn {
+        width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .pembiayaan-logo-img {
+        width: 38px;
+    }
+
+
+    .pembiayaan-logo-text {
+        width: 90px;
+    }
+
+
+    .pembiayaan-back-home span {
+        display: none;
+    }
+
+
+    .pembiayaan-back-home {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 9px;
+    }
+
+
+    .pembiayaan-form-wrapper {
+        padding: 22px 16px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .pembiayaan-product-card,
+        .pembiayaan-product-card::before,
+        .pembiayaan-product-card::after,
+        .pembiayaan-product-card .product-icon,
+        .pembiayaan-product-card .product-arrow {
+            transition: none;
+        }
+    
+        .pembiayaan-product-card:hover {
+            transform: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .product-highlights .highlight-item,
+        .product-highlights .highlight-icon,
+        .product-highlights .highlight-item::before {
+            transition: none;
+        }
+    
+        .product-highlights .highlight-item:hover {
+            transform: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .process-item,
+        .process-item::before,
+        .process-item::after,
+        .process-icon {
+            transition: none;
+        }
+    
+        .process-item:hover {
+            transform: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .pembiayaan-cta-box,
+        .pembiayaan-cta-box .btn,
+        .pembiayaan-cta-box .btn i {
+            transition: none;
+        }
+    }
+
+}
